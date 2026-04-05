@@ -1,0 +1,23 @@
+name: stage1ospf
+
+topology:
+  groups:
+    routers:
+      kind: linux
+      image: quay.io/frrouting/frr:10.5.1
+
+  nodes:
+    r1:
+      group: routers
+      binds:
+        - ../configs/frr/r1/daemons:/etc/frr/daemons
+        - ../configs/frr/r1/frr.conf:/etc/frr/frr.conf
+
+    r2:
+      group: routers
+      binds:
+        - ../configs/frr/r2/daemons:/etc/frr/daemons
+        - ../configs/frr/r2/frr.conf:/etc/frr/frr.conf
+
+  links:
+    - endpoints: ["r1:eth1", "r2:eth1"]
