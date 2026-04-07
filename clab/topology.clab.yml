@@ -1,4 +1,4 @@
-name: stage3ospf
+name: mini-fabric-lab
 
 topology:
   nodes:

@@ -1,0 +1,56 @@
+lab_name: mini-fabric-lab
+
+routers:
+  spine1:
+    ospf_neighbors: 2
+    bgp_neighbors:
+      10.255.0.21: Established
+      10.255.0.22: Established
+      172.16.0.1: Established
+    must_have_routes:
+      - 192.168.1.0/24
+      - 192.168.2.0/24
+      - 0.0.0.0/0
+
+  spine2:
+    ospf_neighbors: 2
+    bgp_neighbors:
+      10.255.0.21: Established
+      10.255.0.22: Established
+      172.16.0.3: Established
+    must_have_routes:
+      - 192.168.1.0/24
+      - 192.168.2.0/24
+      - 0.0.0.0/0
+
+  leaf1:
+    ospf_neighbors: 2
+    bgp_neighbors:
+      10.255.0.11: Established
+      10.255.0.12: Established
+    must_have_routes:
+      - 192.168.2.0/24
+      - 0.0.0.0/0
+
+  leaf2:
+    ospf_neighbors: 2
+    bgp_neighbors:
+      10.255.0.11: Established
+      10.255.0.12: Established
+    must_have_routes:
+      - 192.168.1.0/24
+      - 0.0.0.0/0
+
+  edge1:
+    bgp_neighbors:
+      172.16.0.0: Established
+      172.16.0.2: Established
+    must_have_routes:
+      - 192.168.1.0/24
+      - 192.168.2.0/24
+
+hosts:
+  h1:
+    ping_target: 192.168.2.10
+  h2:
+    ping_target: 192.168.1.10

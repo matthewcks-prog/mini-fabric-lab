@@ -37,3 +37,15 @@ Thumbs.db
 *.log
 *.tmp
 *.bak
+
+# containerlab generated
+clab/clab-*/
+clab-stage*/
+
+# python
+__pycache__/
+*.pyc
+
+# results
+results/*
+!results/.gitkeep
