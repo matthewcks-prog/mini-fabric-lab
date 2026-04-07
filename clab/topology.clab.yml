@@ -28,11 +28,19 @@ topology:
 
     leaf2:
       kind: linux
-      image: docker.io/frrouting/frr:latest
+      image: quay.io/frrouting/frr:10.5.1
       binds:
         - ../configs/frr/leaf2/daemons:/etc/frr/daemons
         - ../configs/frr/leaf2/frr.conf:/etc/frr/frr.conf
         - ../configs/frr/leaf2/vtysh.conf:/etc/frr/vtysh.conf
+
+    edge1:
+      kind: linux
+      image: quay.io/frrouting/frr:10.5.1
+      binds:
+        - ../configs/frr/edge1/daemons:/etc/frr/daemons
+        - ../configs/frr/edge1/frr.conf:/etc/frr/frr.conf
+        - ../configs/frr/edge1/vtysh.conf:/etc/frr/vtysh.conf
 
     h1:
       kind: linux
@@ -55,5 +63,9 @@ topology:
     - endpoints: ["spine1:eth2", "leaf2:eth1"]
     - endpoints: ["spine2:eth1", "leaf1:eth2"]
     - endpoints: ["spine2:eth2", "leaf2:eth2"]
+
+    - endpoints: ["spine1:eth3", "edge1:eth1"]
+    - endpoints: ["spine2:eth3", "edge1:eth2"]
+
     - endpoints: ["leaf1:eth3", "h1:eth1"]
     - endpoints: ["leaf2:eth3", "h2:eth1"]
