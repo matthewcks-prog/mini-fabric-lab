@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "clab",
-        "bridge": "br-7e502f1fe252",
+        "bridge": "br-f76c5afe747b",
         "ipv4-subnet": "172.20.20.0/24",
         "ipv4-gw": "172.20.20.1",
         "ipv6-subnet": "3fff:172:20:20::/64",
@@ -17,8 +17,70 @@
   },
   "ssh-pub-keys": [],
   "nodes": {
-    "r1": {
+    "h1": {
       "index": "0",
+      "shortname": "h1",
+      "longname": "clab-stage1ospf-h1",
+      "fqdn": "h1.stage1ospf.io",
+      "group": "hosts",
+      "labdir": "/home/minifabriclab/Documents/mini-fabric-lab/clab/clab-stage1ospf/h1",
+      "kind": "linux",
+      "image": "nicolaka/netshoot:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f76c5afe747b",
+        "clab-node-group": "hosts",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/minifabriclab/Documents/mini-fabric-lab/clab/clab-stage1ospf/h1",
+        "clab-node-longname": "clab-stage1ospf-h1",
+        "clab-node-name": "h1",
+        "clab-node-type": "",
+        "clab-owner": "minifabriclab",
+        "clab-topo-file": "/home/minifabriclab/Documents/mini-fabric-lab/clab/topology.clab.yml",
+        "containerlab": "stage1ospf"
+      },
+      "port-bindings": [
+      ]
+    },
+    "h2": {
+      "index": "1",
+      "shortname": "h2",
+      "longname": "clab-stage1ospf-h2",
+      "fqdn": "h2.stage1ospf.io",
+      "group": "hosts",
+      "labdir": "/home/minifabriclab/Documents/mini-fabric-lab/clab/clab-stage1ospf/h2",
+      "kind": "linux",
+      "image": "nicolaka/netshoot:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-f76c5afe747b",
+        "clab-node-group": "hosts",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/minifabriclab/Documents/mini-fabric-lab/clab/clab-stage1ospf/h2",
+        "clab-node-longname": "clab-stage1ospf-h2",
+        "clab-node-name": "h2",
+        "clab-node-type": "",
+        "clab-owner": "minifabriclab",
+        "clab-topo-file": "/home/minifabriclab/Documents/mini-fabric-lab/clab/topology.clab.yml",
+        "containerlab": "stage1ospf"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r1": {
+      "index": "2",
       "shortname": "r1",
       "longname": "clab-stage1ospf-r1",
       "fqdn": "r1.stage1ospf.io",
@@ -28,13 +90,13 @@
       "image": "quay.io/frrouting/frr:10.5.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-address": "172.20.20.2",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-7e502f1fe252",
+        "clab-mgmt-net-bridge": "br-f76c5afe747b",
         "clab-node-group": "routers",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/minifabriclab/Documents/mini-fabric-lab/clab/clab-stage1ospf/r1",
@@ -49,7 +111,7 @@
       ]
     },
     "r2": {
-      "index": "1",
+      "index": "3",
       "shortname": "r2",
       "longname": "clab-stage1ospf-r2",
       "fqdn": "r2.stage1ospf.io",
@@ -59,13 +121,13 @@
       "image": "quay.io/frrouting/frr:10.5.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-address": "172.20.20.5",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-7e502f1fe252",
+        "clab-mgmt-net-bridge": "br-f76c5afe747b",
         "clab-node-group": "routers",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/minifabriclab/Documents/mini-fabric-lab/clab/clab-stage1ospf/r2",
@@ -86,13 +148,45 @@
         "a": {
           "node": "r1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:e1:4e:ee",
+          "mac": "aa:c1:ab:1c:de:c3",
           "peer": "z"
         },
         "z": {
           "node": "r2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:41:f3:92",
+          "mac": "aa:c1:ab:e3:2d:5b",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:a9:13:a7",
+          "peer": "z"
+        },
+        "z": {
+          "node": "h1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:cf:1b:7a",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r2",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:a8:40:1c",
+          "peer": "z"
+        },
+        "z": {
+          "node": "h2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:f5:df:c7",
           "peer": "a"
         }
       }

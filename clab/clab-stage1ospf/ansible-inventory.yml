@@ -7,7 +7,11 @@ all:
   children:
     linux:
       hosts:
-        clab-stage1ospf-r1:
+        clab-stage1ospf-h1:
           ansible_host: 172.20.20.3
-        clab-stage1ospf-r2:
+        clab-stage1ospf-h2:
+          ansible_host: 172.20.20.4
+        clab-stage1ospf-r1:
           ansible_host: 172.20.20.2
+        clab-stage1ospf-r2:
+          ansible_host: 172.20.20.5
