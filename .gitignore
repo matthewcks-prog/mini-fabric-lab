@@ -1,0 +1,39 @@
+# --- Containerlab generated state ---
+clab/clab-*/
+clab/**/.tls/
+clab/**/.ssl/
+clab/**/ansible-inventory.yml
+
+# --- Secrets / private keys / certs ---
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.csr
+id_rsa
+id_ed25519
+id_dsa
+id_ecdsa
+*.ovpn
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# --- Editor / OS junk ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Logs / temp ---
+*.log
+*.tmp
+*.bak
