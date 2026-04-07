@@ -84,6 +84,17 @@ make collect
 
 ---
 
+## Documentation
+
+| Document | Description |
+|---|---|
+| [docs/design-notes.md](docs/design-notes.md) | Full architecture rationale: addressing, OSPF, BGP, policy, automation, scaling considerations |
+| [docs/troubleshooting-notes.md](docs/troubleshooting-notes.md) | Layered troubleshooting methodology, common failure patterns, command reference |
+| [results/sample_healthcheck_report.md](results/sample_healthcheck_report.md) | Sample `healthcheck.py` output — all 35 checks passing |
+| [results/sample_show_outputs/](results/sample_show_outputs/) | Realistic FRR show command outputs and end-to-end ping/traceroute evidence |
+
+---
+
 ## Design Choices
 
 ### Why OSPF underlay + iBGP overlay?

@@ -46,6 +46,10 @@ clab-stage*/
 __pycache__/
 *.pyc
 
-# results
+# results — ignore auto-generated run artifacts, but keep sample reference files
 results/*
 !results/.gitkeep
+!results/sample_healthcheck_report.md
+!results/sample_show_outputs/
+results/sample_show_outputs/*
+!results/sample_show_outputs/**
